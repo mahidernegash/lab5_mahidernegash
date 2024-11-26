@@ -1,21 +1,23 @@
-name: Deploy to FTP Server
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
 jobs:
+  # Single deploy job since we're just deploying
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Deploy file
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
           FTP_SERVER: home562576484.1and1-data.host
-          FTP_USERNAME: ${{ secrets.ftp_username }}
+          FTP_USERNAME: ${{secrets.ftp_username}}
           FTP_PASSWORD: ${{ secrets.ftp_password }}
           local_path: './*'
           PORT: 22
