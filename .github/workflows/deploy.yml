@@ -1,5 +1,4 @@
-name: Deploy static content to Pages
-
+name: Deploy to FTP Server
 on:
   push:
     branches: ["shivatest"]
@@ -21,5 +20,5 @@ jobs:
           local_path: './*'
           PORT: 22
           METHOD: sftp
-          remote_path: '/site/IS436/lab5/'
+          remote_path: '/site/IS436/lab5/shiva/'
           sftp_only: true
