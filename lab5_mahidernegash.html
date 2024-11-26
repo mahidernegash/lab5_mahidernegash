@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 5 - Your Full Name</title>
+    <title>Lab 5 - Mahider Negash</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,7 +33,7 @@
 <body>
     <header>
         <h1>Welcome to Lab 5</h1>
-        <p>Created by: Mahider Negash </p>
+        <p>Created by: Mahider Negash</p>
     </header>
     <main>
         <h2>HTML Tester Content</h2>
@@ -45,30 +45,3 @@
     </footer>
 </body>
 </html>
-
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
-
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["shivatest"]
-jobs:
-  # Single deploy job since we're just deploying
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Deploy file
-        uses: SamKirkland/FTP-Deploy-Action@2.0.0
-        env:
-          FTP_SERVER: home562576484.1and1-data.host
-          FTP_USERNAME: ${{secrets.ftp_username}}
-          FTP_PASSWORD: ${{ secrets.ftp_password }}
-          local_path: './*'
-          PORT: 22
-          METHOD: sftp
-          remote_path: '/site/IS436/lab5/shiva/'
-          sftp_only: true
